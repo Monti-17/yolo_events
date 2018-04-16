@@ -1,0 +1,891 @@
+/*
+Theme Name: YOLO events
+Author: monti|kreativ
+Description: YOLO Events web application
+Version: 0.0.1
+Tags: YOLO, event, corporate events
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+#wrapper {
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+}
+
+.typeface {
+  text-align: left;
+  vertical-align: middle;
+
+  color: white;
+
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: inherit;
+}
+
+
+#menu {
+    display: flex;
+
+    margin-top: 0;
+
+    list-style-type: none;
+
+    text-decoration: none;
+}
+
+.menuitems {
+  display: inline-block;
+
+  padding-right: 0pt;
+  padding-left: 20pt;
+
+  letter-spacing: 2pt;
+
+  color: white;
+
+  font-size: 1.3vw;
+  font-weight: 300;
+}
+
+.menuitems:last-child {
+  letter-spacing: 1pt;
+}
+
+.menuitems:after {
+  display: block;
+
+  width: 0px;
+  height: 0.05vw;
+  margin: auto;
+  margin-top: 0.5vw;
+
+  content: '';
+  transition: width .5s ease, background-color .5s ease;
+
+  background: transparent;
+}
+
+.menuitems:hover:after {
+  width:80%;
+
+  background: white;
+}
+
+
+a {
+  z-index: 100;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+
+
+.scroller {
+  transition: all 1s ease-out;
+  transform: translateY(50px);
+
+  opacity: 0;
+}
+
+.scroller.fade-in{
+  transform: translateY(0);
+
+  opacity: 1;
+}
+
+#navbar {
+  position: fixed;
+  z-index: 100;
+  top: 0vw;
+  right: 3vw;
+
+  display: none;
+  float: right;
+
+  width: 44vw;
+  height: 7vw;
+  padding-top: 2vw;
+  padding-right: 3vw;
+
+  background-image: url(assets/YOLOshapes.svg);
+  background-repeat: no-repeat;
+  background-position: 0vw -12vw;
+  background-size: cover;
+}
+
+#callToAction {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 50vw;
+
+    float: right;
+
+    width: 31vw;
+    height: 8vw;
+    padding: auto;
+
+    text-align: center;
+
+    color: white;
+    background-image: url(assets/cta.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-size: 2.7vw;
+  }
+
+  .ctabutton:after {
+    display: block;
+
+    width: 0px;
+    height: 0.1vw;
+    margin: auto;
+    margin-top: 0.5vw;
+
+    content: '';
+    transition: width .5s ease, background-color .5s ease;
+
+    background: transparent;
+  }
+
+  .ctabutton:hover:after {
+    width:40%;
+
+    background: white;
+  }
+
+#home {
+    position: relative;
+    z-index: -99;
+
+    width: 150vw;
+    min-width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    background: url(assets/party.jpg) 50% 0 no-repeat fixed;
+    background-color: #282828;
+    background-size: cover;
+  }
+
+#homeLogo {
+    position: absolute;
+    bottom: 30vh;
+
+    width: 100%;
+    max-height: 70vh;
+
+    vertical-align: middle;
+}
+
+#homeContent {
+  position: absolute;
+  bottom: 10vh;
+
+  width: 100%;
+  height: 8vw;
+  padding-top: 1vw;
+  padding-bottom: 0.5vw;
+
+  text-align: center;
+  vertical-align: middle;
+
+  color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 3vw;
+}
+
+#arrow {
+    margin-top: 1vw;
+
+    font-size: 8vw;
+}
+
+#aboutUs {
+  position: absolute;
+  top: 5vw;
+  left: 1vw;
+
+  display: inline-block;
+
+  font-size: 6vw;
+  }
+
+#aboutUsShape {
+  position: relative;
+  top: 4vw;
+  left: 5vw;
+}
+
+#about {
+  position: relative;
+  z-index: -98;
+
+  width: 100vw;
+  min-width: 100vw;
+  height: 110vh;
+  min-height: 60vw;
+  margin: 0 auto;
+
+  background: url(assets/horse.jpg) 50% 0 no-repeat fixed;
+  background-color: #282828;
+  background-size: auto;
+}
+
+
+#about article {
+  position: absolute;
+  z-index: 1;
+  right: 4vw;
+  bottom: 50px;
+
+  width: 30vw;
+
+  text-align: center;
+  vertical-align: middle;
+
+  color: white;
+
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 2.3vw;
+}
+
+#aboutShape {
+  position: absolute;
+  z-index: -99;
+  right: -20vw;
+  bottom: -12vw;
+
+  overflow: visible;
+
+  width: 55vw;
+  height: 55vw;
+}
+
+.shape {
+  width: 16vw;
+  height: 16vw;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#products {
+    position: relative;
+    z-index: -99;
+
+    width: 100vw;
+    min-width: 100vw;
+    height: 200vw;
+    min-height: auto;
+    margin: 0 auto;
+
+    background: url(assets/fireworks.jpg) 50% 0 no-repeat fixed;
+    background-color: #282828;
+    background-size: fill;
+  }
+
+
+#products article {
+    position: absolute;
+    z-index: -100;
+    top: 5vw;
+
+    width: 100vw;
+
+    text-align: center;
+
+    font-size: 2vw;
+}
+
+#activitiesGrid ul {
+  position: relative;
+  z-index: 100;
+
+  display: list-item;
+  float: right;
+  overflow: auto;
+
+  width: 75%;
+  padding-left: 0;
+}
+
+#products li {
+  display: inline-block;
+
+  padding: 0vw 2vw 0vw 2vw;
+
+  list-style-type: none;
+
+  vertical-align: super;
+}
+
+#products h3 {
+  position: absolute;
+  top: 10vh;
+  left: 13vw;
+
+  width: 37vw;
+
+  font: inherit;
+  font-size: 2vw;
+  font-weight: 100;
+}
+
+.caption {
+  display: table-caption;
+
+  text-align: center;
+}
+
+.products {
+  display: inline-block;
+
+  width: 10vw;
+  min-height: 10vw;
+
+  border-radius: 50%;
+
+}
+
+#productsTitle {
+  position: absolute;
+  top: 5vw;
+  right: 10vw;
+
+  display: inline-block;
+
+  text-align: left;
+
+  font-size: 6vw;
+}
+
+#productsTitle p {
+  padding-left: 3vw;
+
+  text-align: left;
+  vertical-align: middle;
+
+  font-size: 3vw;
+  line-height: 0.1vw;
+}
+
+#productsTitle h1 {
+  font: inherit;
+  line-height: 0.1vw;
+}
+
+#activities {
+  position: relative;
+
+  width: 100vw;
+  height: 60vw;
+}
+
+#activitiesShape {
+  position: absolute;
+  z-index: -101;
+  bottom: -30vw;
+  left: -14vw;
+
+  width: 60vw;
+  height: 60vw;
+
+  transform: rotate(90deg);
+}
+
+#activitiesGrid {
+  position: absolute;
+  top: 30vw;
+
+  float: right;
+
+  width: 100vw;
+  height: 100vw;
+}
+
+#activitiesTitle {
+  position: absolute;
+  top: 23vw;
+  left: 3vw;
+
+  width: 25vw;
+}
+
+#activitiesTitle h1 {
+  margin-bottom: 0;
+
+  text-align: left;
+
+  font-size: 6vw;
+  font-weight: 100;
+}
+
+#activitiesTitle p {
+  text-align: left;
+
+  font-size: 1.9vw;
+  font-weight: 100;
+
+}
+
+#slides {
+  position: relative;
+
+  width: 100vw;
+  height: 60vw;
+}
+
+#slidesGrid {
+  position: absolute;
+  top: 70vw;
+
+  float: left;
+
+  width: 100vw;
+  height: 100vw;
+}
+
+#slidesTitle {
+  position: absolute;
+  top: 63vw;
+  right: 3vw;
+
+  width: 25vw;
+}
+
+#slidesTitle h1 {
+  margin-bottom: 0;
+
+  text-align: right;
+
+  font-size: 6vw;
+  font-weight: 100;
+}
+
+#slidesTitle p {
+  text-align: right;
+
+  font-size: 1.9vw;
+  font-weight: 100;
+}
+
+#slidesShape {
+  position: absolute;
+  z-index: -101;
+  bottom: -30vw;
+  left: -14vw;
+
+  width: 60vw;
+  height: 60vw;
+
+  transform: rotate(0deg);
+}
+
+#slidesGrid ul {
+  position: relative;
+  z-index: 100;
+
+  display: list-item;
+  float: left;
+  overflow: auto;
+
+  width: 75%;
+  padding-left: 0;
+}
+
+#combos {
+  position: relative;
+
+  width: 100vw;
+  height: 60vw;
+}
+
+#combosTitle {
+  position: absolute;
+  top: 103vw;
+  left: 3vw;
+
+  width: 25vw;
+}
+
+#combosTitle h1 {
+  margin-bottom: 0;
+
+  text-align: left;
+
+  font-size: 6vw;
+  font-weight: 100;
+}
+
+#combosTitle p {
+  text-align: left;
+
+  font-size: 1.9vw;
+  font-weight: 100;
+
+}
+
+#combosShape {
+  position: absolute;
+  z-index: -101;
+  bottom: -30vw;
+  left: -14vw;
+
+  width: 60vw;
+  height: 60vw;
+
+  transform: rotate(90deg);
+}
+
+#combosGrid {
+  position: absolute;
+  top: 110vw;
+  right: 0;
+
+  float: right;
+
+  width: 80vw;
+  height: 100vw;
+}
+
+#castles {
+  position: relative;
+
+  width: 100vw;
+  height: 60vw;
+}
+
+#castlesGrid {
+  position: absolute;
+  top: 150vw;
+
+  float: left;
+
+  width: 100vw;
+  height: 100vw;
+}
+
+#castlesTitle {
+  position: absolute;
+  top: 143vw;
+  right: 3vw;
+
+  width: 25vw;
+}
+
+#castlesTitle h1 {
+  margin-bottom: 0;
+
+  text-align: right;
+
+  font-size: 6vw;
+  font-weight: 100;
+}
+
+#castlesTitle p {
+  text-align: right;
+
+  font-size: 1.9vw;
+  font-weight: 100;
+}
+
+#castlesShape {
+  position: absolute;
+  z-index: -101;
+  bottom: -25vw;
+  left: -10vw;
+
+  width: 50vw;
+  height: 50vw;
+
+  transform: rotate(30deg);
+}
+
+#castlesGrid ul {
+  position: relative;
+  z-index: 100;
+
+  display: list-item;
+  float: left;
+  overflow: auto;
+
+  width: 75%;
+  padding-left: 0;
+}
+
+.placeholder {
+  position: relative;
+
+  width: 10vw;
+  height: 10vw;
+  margin: 8vw 1vw 1vw 8vw;
+  padding: 1vw 1vw 1vw 1vw;
+
+  border-radius: 50%;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: contain;
+}
+
+.placeholder p {
+  position: relative;
+  top: -3.5vw;
+  left: 15vw;
+
+  display: block;
+
+  color: white;
+
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 4vw;
+
+
+}
+
+#steve {
+  background-image: url(assets/lachie.jpg);
+}
+
+#lachie {
+  background-image: url(assets/lachie.jpg);
+}
+
+#testimonialsTitle {
+  position: absolute;
+  top: 7vw;
+  left: 5vw;
+
+  display: inline-block;
+
+  color: white;
+
+  font-size: 6vw;
+  }
+
+
+#testimonials {
+  position: relative;
+  z-index: -100;
+
+  width: 100vw;
+  min-width: 100vw;
+  height: 60vw;
+  min-height: 65vw;
+  margin: 0 auto;
+
+  background: url(assets/wine.jpg) 50% 0 no-repeat fixed;
+  background-size: cover;
+}
+
+
+#testimonials article {
+  position: absolute;
+  z-index: 1;
+  bottom: 50px;
+  left: 6vw;
+
+  width: 37vw;
+
+  text-align: left;
+  vertical-align: middle;
+
+  color: white;
+
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 2vw;
+  font-size: 2.5vw;
+}
+
+#testimonials h1 {
+  position: absolute;
+  top: 13vw;
+  right: 11vw;
+
+  width: 30vw;
+
+  color: white;
+
+  font: inherit;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 5vw;
+  font-weight: 100;
+}
+
+#testimonialsShape {
+  position: absolute;
+  top: 5vw;
+  left: 3vw;
+}
+
+#quote1 {
+  position: absolute;
+  top: 15vw;
+  right: 45vw;
+
+  width: 5vw;
+  height: 5vw;
+}
+
+#quote2 {
+  position: absolute;
+  top: 57vw;
+  right: 3vw;
+
+  width: 5vw;
+  height: 5vw;
+
+}
+
+#contact {
+  position: relative;
+  z-index: -100;
+
+  width: 100vw;
+
+  min-width: 100vw;
+
+  height: 60vw;
+
+  min-height: 100vh;
+  margin: 0 auto;
+
+  background: url(assets/desk.jpg) 50% 0 no-repeat fixed;
+  background-size: 100% 100%;
+
+}
+
+
+#contact article {
+  position: absolute;
+  z-index: 1;
+  bottom: 50px;
+  left: 6vw;
+
+  width: 37vw;
+
+  text-align: left;
+  vertical-align: middle;
+
+  color: white;
+
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 2vw;
+  font-size: 2.5vw;
+}
+
+#contact h1 {
+  position: absolute;
+  top: 13vw;
+  right: 5vw;
+
+  width: 30vw;
+
+  color: white;
+
+  font: inherit;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 5vw;
+  font-weight: 100;
+}
+
+#contacts {
+  position: absolute;
+  top: 25vw;
+  left: 10vw;
+}
+
+#contacts p {
+  color: white;
+
+  font-size: 4vw;
+}
+
+#contactSVG {
+  position: absolute;
+  left: 0;
+  top: 28vw;
+  height: 18vw;
+  width: auto;
+}
+
+#contactShape {
+  position: absolute;
+  top: 5vw;
+  left: 2vw;
+}
+
+#contactTitle {
+  position: absolute;
+  top: 7vw;
+  left: 5vw;
+
+  display: inline-block;
+
+  color: white;
+
+  font-size: 6vw;
+  }
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+#footerLogo {
+  position: relative;
+  top: 0.5vw;
+  left: 1vw;
+
+  width: 10vw;
+  height: 10vw;
+}
+
+#footerLogo img {
+  overflow: hidden;
+
+  width: 15vw;
+  height: auto;
+  min-height: auto;
+}
+
+#footerBanner {
+  position: absolute;
+
+  width: 100vw;
+  height: 17vw;
+  margin-top: -6vw;
+  margin-bottom: 1px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+
+  width: 100vw;
+  height: 10vw;
+
+  letter-spacing: 0.25vw;
+
+  font-size: 1vw;
+}
+
+footer span {
+  position: absolute;
+  right: 1vw;
+  bottom: 5.5vw;
+}

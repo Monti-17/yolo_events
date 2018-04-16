@@ -1,0 +1,139 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="YOLO events">
+  <meta name="author" content="monti|kreativ">
+
+  <title>YOLO events</title>
+  <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_directory'); ?>/css/animate.min.css"/>
+  <script src="<?php echo get_bloginfo('template_directory'); ?>/js/jquery-2.1.0.min.js"></script>
+    <!--script to create parrallax scrolling effect-->
+    <script>
+
+        $(document).ready(function(){
+
+            var $window = $(window);
+
+            $('section[data-type="background"]').each(function(){
+                var $bgobj = $(this);
+                    $(window).scroll(function() {
+                    var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+                    var coords = '50% '+ yPos + 'px';
+                    $bgobj.css({ backgroundPosition: coords });
+                    });
+            });
+        });
+
+    //script to time the interval between bounces for arrow
+
+      window.setInterval(bounceArrow, 1000);
+
+      function bounceArrow() {
+       $('#arrow').removeClass('animated bounce').delay(2000).queue(function(next) {
+         $(this).addClass('animated bounce');
+         next();
+       });
+     };
+
+    //script to make the menu appear after scrolling past home
+
+    var viewportHeight = $(window).height(); // == 100vh
+      (function($) {
+          $(document).ready(function(){
+              $(window).scroll(function(){
+                  if ($(this).scrollTop() > viewportHeight) {
+                      $('#navbar').fadeIn(200);
+                  } else {
+                      $('#navbar').fadeOut(200);
+                  }
+              });
+          });
+      })(jQuery);
+      $(document).ready(function () {
+    $(document).on("scroll", onScroll);
+
+    //script to make the menu items active at each section
+
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
+
+        $('a').each(function () {
+            $(this).removeClass('menuitems:hover:after');
+        })
+        $(this).addClass('menuitems:hover:after');
+
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top+2
+        }, 500, 'swing', function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
+    });
+});
+
+function onScroll(event){
+    var scrollPos = $(document).scrollTop();
+    $('#menu a').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('.menuitems ul li span a').removeClass("menuitems:after");
+            currLink.addClass("menuitems:after");
+        }
+        else{
+            currLink.removeClass("menuitems:after");
+        }
+    });
+}
+    </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <nav id="navbar">
+      <ul id="menu">
+        <li>
+          <span class="menuitems"><a href="home">home</a></span>
+        </li>
+        <li>
+          <span class="menuitems"><a href="about">about</a></span>
+        </li>
+        <li>
+          <span class="menuitems"><a href="products">protucts</a></span>
+        </li>
+        <li>
+          <span class="menuitems"><a href="testimonials">testimonials</a></span>
+        </li>
+        <li>
+          <span class="menuitems"><a href="contact_us">contact us</a></span>
+        </li>
+      </ul>
+    </nav>
+    <section id="home" data-type="background" data-speed="10">
+      <article class="">
+      </article>
+    </section>
+    <div>
+      <img id="homeLogo" src="<?php echo get_bloginfo('template_directory'); ?>/Assets/logo.svg" alt="">
+      <article id="homeContent">scroll down<br>
+        <p class="animated infinite bounce" id="arrow">&#711;
+      </article>
+    </div>
+    <section id="about" data-type="background" data-speed="5">
+        <article>our products and services</article>
+    </section>
+    <section id="products" data-type="background" data-speed="10">
+        <article>crackhouse or cocaine house</article>
+    </section>
+  </div>
+</body>
+</html>
